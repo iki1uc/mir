@@ -1,66 +1,53 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>error.html</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>MIR – Einsatz</title>
   <style>
     body {
-      background: #050509;
-      color: #f5f5f5;
-      font-family: system-ui, sans-serif;
+      background: #000;
+      color: #0f0;
+      font-family: monospace;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      height: 100vh;
     }
-    .frame {
-      border: 1px solid #444;
-      padding: 1.5rem 2rem;
-      max-width: 520px;
-      text-align: left;
-      background: #0b0b12;
+    .mir-core {
+      border: 1px solid #0f0;
+      padding: 20px 30px;
     }
-    .title {
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.5rem;
-    }
-    .mono {
-      font-family: "Fira Code", monospace;
-      font-size: 0.9rem;
-      line-height: 1.4;
-      white-space: pre-line;
+    .status {
+      margin-top: 10px;
+      color: #0ff;
     }
   </style>
 </head>
 <body>
-  <div class="frame">
-    <div class="title">TROSTPREIS: ROOT‑HIFEN DROP</div>
-    <div class="mono">
-error.index → gefunden  
-idex.html  → halb da, halb weg  
-root/hifen → bereit zum greifen  
-
-STATUS:
-blink = wie spielhölle  
-rate  = wie risk‑hauptgewinn  
-trost = business‑freundlich  
-final = sauber gesetzt  
-
-DATEIEN:
-[ error.index ]  → pseudo‑download  
-[ idex.html ]    → ghost‑version  
-[ root‑hifen ]   → schatten‑paket  
-
-HINWEIS:
-trostpreis ist gültig
-aber nicht erwähnenswert
-gütigkeit steckt drin
-business bleibt oben
-reFINAL schließt ab
-    </div>
+  <div class="mir-core">
+    <div>MIR = <span id="mir-flag">False</span></div>
+    <div>Fokus = <span id="mir-fokus">0</span></div>
+    <div>Wind = <span id="mir-wind">1</span></div>
+    <div>Move = <span id="mir-move">idle</span></div>
+    <div class="status" id="mir-status">MIR noch nicht eingesetzt.</div>
   </div>
+
+  <script>
+    function mirEinsatz() {
+      const mir = true;
+      let fokus = 1;
+      let wind = 0;
+      let move = "gesetzt";
+
+      document.getElementById("mir-flag").textContent = mir;
+      document.getElementById("mir-fokus").textContent = fokus;
+      document.getElementById("mir-wind").textContent = wind;
+      document.getElementById("mir-move").textContent = move;
+      document.getElementById("mir-status").textContent = "MIR ist eingesetzt und hält den Zug.";
+    }
+
+    // direkt beim Laden ausführen
+    mirEinsatz();
+  </script>
 </body>
 </html>
