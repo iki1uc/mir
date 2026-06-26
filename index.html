@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>MIR – Einsatz</title>
+  <style>
+    body {
+      background: #000;
+      color: #0f0;
+      font-family: monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .mir-core {
+      border: 1px solid #0f0;
+      padding: 20px 30px;
+    }
+    .status {
+      margin-top: 10px;
+      color: #0ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="mir-core">
+    <div>MIR = <span id="mir-flag">False</span></div>
+    <div>Fokus = <span id="mir-fokus">0</span></div>
+    <div>Wind = <span id="mir-wind">1</span></div>
+    <div>Move = <span id="mir-move">idle</span></div>
+    <div class="status" id="mir-status">MIR noch nicht eingesetzt.</div>
+  </div>
+
+  <script>
+    function mirEinsatz() {
+      const mir = true;
+      let fokus = 1;
+      let wind = 0;
+      let move = "gesetzt";
+
+      document.getElementById("mir-flag").textContent = mir;
+      document.getElementById("mir-fokus").textContent = fokus;
+      document.getElementById("mir-wind").textContent = wind;
+      document.getElementById("mir-move").textContent = move;
+      document.getElementById("mir-status").textContent = "MIR ist eingesetzt und hält den Zug.";
+    }
+
+    // direkt beim Laden ausführen
+    mirEinsatz();
+  </script>
+</body>
+</html>
 
