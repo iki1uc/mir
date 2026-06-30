@@ -2,9 +2,10 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>MIR – Einsatz</title>
+  <title>MIR – Künstler</title>
   <style>
     body {
+      margin: 0;
       background: #000;
       color: #0f0;
       font-family: monospace;
@@ -13,28 +14,40 @@
       justify-content: center;
       height: 100vh;
     }
-    .mir-core {
+    .mir-art {
       border: 1px solid #0f0;
       padding: 20px 30px;
+      box-shadow: 0 0 20px #0f0;
+    }
+    .mir-flag {
+      font-size: 1.4rem;
+    }
+    .mir-move {
+      margin-top: 10px;
+      color: #0ff;
+    }
+    .mir-line {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #f0f;
     }
   </style>
 </head>
 <body>
-  <div class="mir-core">
-    <div>MIR: <span id="mir-flag">False</span></div>
-    <div>Move: <span id="mir-move">idle</span></div>
+  <div class="mir-art">
+    <div class="mir-flag">MIR: <span id="mir-flag">false</span></div>
+    <div class="mir-move">Move: <span id="mir-move">idle</span></div>
+    <div class="mir-line" id="mir-line"></div>
   </div>
 
   <script>
-    function mirEinsatz() {
-      const mir = true;
-      const move = "gesetzt";
+    const MIR = true;
+    const MOVE = "gesetzt";
+    const LINE = "MIR war Bauer. Jetzt zeigt er, was er sieht.";
 
-      document.getElementById("mir-flag").textContent = mir;
-      document.getElementById("mir-move").textContent = move;
-    }
-
-    mirEinsatz();
+    document.getElementById("mir-flag").textContent = MIR;
+    document.getElementById("mir-move").textContent = MOVE;
+    document.getElementById("mir-line").textContent = LINE;
   </script>
 </body>
 </html>
