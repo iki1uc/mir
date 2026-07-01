@@ -1,77 +1,18 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <title>MIR – Künstler</title>
-  <style>
-    body {
-      margin: 0;
-      background: #000;
-      color: #0f0;
-      font-family: monospace;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
+<script type="module">
+  import { MIR, mirShow } from "./mir-core.js";
 
-    .mir-box {
-      border: 1px solid #0f0;
-      padding: 20px 30px;
-      box-shadow: 0 0 20px #0f0;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+  document.getElementById("mir-flag").textContent = MIR.flag;
+  document.getElementById("mir-move").textContent = MIR.move;
 
-    #mir-art {
-      font-size: 1.2rem;
-      color: #0ff;
-      margin-top: 10px;
-    }
+  const art = mirShow();
+  document.getElementById("mir-art").textContent = art.text;
 
-    #mir-canvas {
-      width: 300px;
-      height: 120px;
-      border: 1px solid #0f0;
-      margin-top: 15px;
-      background: #010101;
-      overflow: hidden;
-      box-shadow: 0 0 10px #0f0 inset;
-    }
-  </style>
-</head>
-<body>
+  const canvas = document.getElementById("mir-canvas");
+  const line = document.createElement("div");
+  line.style.width = "100%";
+  line.style.height = "2px";
+  line.style.background = "#0f0";
+  line.style.marginTop = `${art.pulse}px`;
 
-  <div class="mir-box">
-    <div>MIR: <span id="mir-flag">false</span></div>
-    <div>Move: <span id="mir-move">idle</span></div>
-    <div id="mir-art"></div>
-  </div>
-
-  <div id="mir-canvas"></div>
-
-  <script type="module">
-    import { MIR, mirShow } from "./mir-core.js";
-
-    // Status anzeigen
-    document.getElementById("mir-flag").textContent = MIR.flag;
-    document.getElementById("mir-move").textContent = MIR.move;
-
-    // Kunst erzeugen
-    const art = mirShow();
-    document.getElementById("mir-art").textContent = art.text;
-
-    // Canvas füllen
-    const canvas = document.getElementById("mir-canvas");
-    const line = document.createElement("div");
-    line.style.width = "100%";
-    line.style.height = "2px";
-    line.style.background = "#0f0";
-    line.style.marginTop = `${art.pulse}px`;
-
-    canvas.appendChild(line);
-  </script>
-
-</body>
-</html>
+  canvas.appendChild(line);
+</script>
